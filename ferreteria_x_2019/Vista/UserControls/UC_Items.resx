@@ -121,7 +121,7 @@
   <data name="btnAgregarItems.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAEFdJREFUeF7t17GNYNUWRNGJiCgIgRgI4SeJiYUwiAJhzq8eHXOcLq/6riXdDJ7q
+        wAAADsABataJCQAAEFdJREFUeF7t17GNYNUWRNGJiCgIgRgI4SeJiYUwiAJhzq8eHXOcLq/6riXdDJ7q
         7PcNAAC+lO/fv/+S90cefMafeb/eZwTAmoy4AKAhAACWZcQFAA0BALAsIy4AaAgAgGUZcQFAQwAALMuI
         CwAaAgBgWUZcANAQAADLMuICgIYAAFiWERcANAQAwLKMuACgIQAAlmXEBQANAQCwLCMuAGgIAIBlGXEB
         QEMAACzLiAsAGgIAYFlGXADQEAAAyzLiAoCGAABYlhEXADQEAMCyjLgAoCEAAJZlxAUADQEAsCwjLgBo
@@ -200,9 +200,6 @@
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -215,7 +212,7 @@
   <data name="btnModificar.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAALzNJREFUeF7t3Q/krvX9x/HJkeM4jiNJkiRHJskkySTJJDOZSSaTZPIzk5kkmZhJ
+        wAAADsABataJCQAALzNJREFUeF7t3Q/krvX9x/HJkeM4jiNJkiRHJskkySTJJDOZSSaTZPIzk5kkmZhJ
         kslMZmaSSTKZmZnJZJJkZjKZSSaTSSZJJpPze76+93Wv7/d0zv39fq/7uu/r/bmu54O3Oe2c+/u+ru99
         X+/Xff39nCRJUtNOnz59PnUZdSX1Repm6lbq69Q9u+o+6mHq+2fUY9RPqKcPWM9TL/WsV6g3qH80Uh9Q
         quld6my/M2tz9Tfqj9TZPtvWZuoP1A+p66mj3WZfc8Iv/jzqCJVBn0H+HPU69R4lSZq2T6g/Uw9SV1BH
@@ -422,7 +419,7 @@
   <data name="Eliminar.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAIx1JREFUeF7t3X/k/3e9//HMzMzMzMxkMjPJzCRHMkkmR5IkX8kckyPJkUySIzkk
+        wAAADsABataJCQAAIx1JREFUeF7t3X/k/3e9//HMzMzMzMxkMjPJzCRHMkkmR5IkX8kckyPJkUySIzkk
         kySZZCaTJEmOHEmOHEkykyTJMTmSzCTJJMmRfW/37THf2fe9+rzvfT6v++v1eF8u3P/9eH1er/vr+by+
         Xz+er1cAAMCF9uyzz16VuS5zY+aWzCszt2Vuz9yReXXmNZl7Mm/K3Je5P/NA5p8zH8n865pPZL7wkvlS
         5t/PmO9lnvgb89PMrzK/vkzzdOZPmUvxh8xZ/8alzM8yZ/1/an6Q+VbmpffHVzOPZF643z6TeeF+rXlf

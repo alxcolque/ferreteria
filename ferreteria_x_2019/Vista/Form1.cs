@@ -1,6 +1,4 @@
-﻿using ferreteria_x_2019.Config;
-using ferreteria_x_2019.Controlador;
-using Oracle.DataAccess.Client;
+﻿using ferreteria_x_2019.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,9 +15,6 @@ namespace ferreteria_x_2019
 {
     public partial class Form1 : Form
     {
-        internal static OracleConnection conexion = null;
-        string conexionstring = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-        //string conexionstring = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
         public Form1()
         {
             InitializeComponent();
@@ -27,42 +22,15 @@ namespace ferreteria_x_2019
         }
         public void btnAcceder_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            OracleConnection conexion = new OracleConnection(conexionstring);
-            conexion.Open();
-            String sql = "SELECT * FROM usuarios WHERE usuario='" + txtUsuario.Text + "' AND clave='" + txtPassword.Text + "'";
-            
-            OracleDataAdapter datos = new OracleDataAdapter(sql, conexion);
-            
-            string username = txtUsuario.Text.Trim();
-            string password = txtPassword.Text.Trim();
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("El usuario y el password son datos requeridos");
-            }
-            else
-            {
-                DataSet data = new DataSet();
-                datos.Fill(data);
-                string ci = "";
-                int usu = data.Tables[0].Rows.Count;
-                if (usu == 1)
-                {
-                    CI_Ventas.Usuar = username;
-                    for (int i = 0; i < data.Tables[0].Rows.Count; i++)
-                    {
-                        ci = data.Tables[0].Rows[i][0].ToString();
-                    }
-                    Principal m = new Principal();
-                    m.ci = ci;
-                    m.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Acceso denegad@. Puede que usuario sea XXX","Hola Sujeto No identificado");
-                }
-                conexion.Close();
-            }
+            login();
+        }
+        public void login()
+        {
+            CI_Login.Usuario = txtUsuario.Text;
+            CI_Login.Clave = txtPassword.Text;
+            CI_Login obj = new CI_Login();
+            obj.resp();
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {

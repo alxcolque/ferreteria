@@ -21,7 +21,7 @@ namespace ferreteria_x_2019
         int panelWidth;
         bool isCollapsed;
         internal string ci;
-        string usuario = CI_Ventas.Usuar;
+        string usuario = CI_Venta.Usuar;
         public Principal()
         {
             InitializeComponent();

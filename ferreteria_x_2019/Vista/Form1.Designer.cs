@@ -113,6 +113,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(228, 42);
             this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.Text = "admin";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUsuario.OnValueChanged += new System.EventHandler(this.txtUsuario_OnValueChanged);
             // 
@@ -132,6 +133,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(228, 36);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.Text = "admin";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassword.OnValueChanged += new System.EventHandler(this.txtPassword_OnValueChanged);
             // 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ferreteria_x_2019.Controlador
 {
-    public class CI_Clientes
+    public class CI_Cliente
     {
         public static string Id_cli;
         public static string NomC;

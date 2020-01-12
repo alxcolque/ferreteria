@@ -41,7 +41,7 @@ namespace ferreteria_x_2019.Forms
 
         private void llenarForm()
         {
-            string i = CI_Clientes.Id_cli;
+            string i = CI_Cliente.Id_cli;
             if (int.Parse(i) == 0)
             {
                 lblTitle.Text = "NUEVO CLIENTE";
@@ -51,8 +51,8 @@ namespace ferreteria_x_2019.Forms
             else
             {
                 lblTitle.Text = "MODIFICAR MODIFICAR";
-                txtNombreCli.Text = CI_Clientes.NomC;
-                txtTel.Text = CI_Clientes.TelC;
+                txtNombreCli.Text = CI_Cliente.NomC;
+                txtTel.Text = CI_Cliente.TelC;
             }
 
         }
@@ -68,7 +68,7 @@ namespace ferreteria_x_2019.Forms
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
             abrirConexion();
-            string idc = CI_Clientes.Id_cli;
+            string idc = CI_Cliente.Id_cli;
             string nom = txtNombreCli.Text;
             string tel = txtTel.Text;
             try

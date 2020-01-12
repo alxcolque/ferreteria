@@ -37,6 +37,7 @@
       <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Oracle.DataAccess, Version=10.2.0.100, Culture=neutral, PublicKeyToken=89b483f429c47342">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Oracle.DataAccess.dll</HintPath>
@@ -58,133 +59,137 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\Conexion_DB.cs" />
     <Compile Include="Controlador\CI_Cesta.cs" />
-    <Compile Include="Controlador\CI_Clientes.cs" />
-    <Compile Include="Controlador\CI_Items.cs" />
+    <Compile Include="Controlador\CI_Cliente.cs" />
+    <Compile Include="Controlador\CI_Item.cs" />
+    <Compile Include="Controlador\CI_Login.cs" />
     <Compile Include="Controlador\CI_Marca.cs" />
     <Compile Include="Controlador\CI_Stock.cs" />
+    <Compile Include="Controlador\CI_Tipo.cs" />
     <Compile Include="Controlador\Registro.cs" />
-    <Compile Include="Controlador\CI_Ventas.cs" />
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Controlador\CI_Venta.cs" />
+    <Compile Include="Modelo\Item_Model.cs" />
+    <Compile Include="Modelo\Login_Model.cs" />
+    <Compile Include="Modelo\Marca_Model.cs" />
+    <Compile Include="Modelo\Tipo_Model.cs" />
+    <Compile Include="Vista\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
+    <Compile Include="Vista\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAddStock.cs">
+    <Compile Include="Vista\frmAddItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAddStock.Designer.cs">
+    <Compile Include="Vista\frmAddItem.Designer.cs">
+      <DependentUpon>frmAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmAddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmAddStock.Designer.cs">
       <DependentUpon>frmAddStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAgregarItem.cs">
+    <Compile Include="Vista\frmDetVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAgregarItem.Designer.cs">
-      <DependentUpon>frmAgregarItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmDetVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmDetVenta.Designer.cs">
+    <Compile Include="Vista\frmDetVenta.Designer.cs">
       <DependentUpon>frmDetVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmMarca.cs">
+    <Compile Include="Vista\frmMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmMarca.Designer.cs">
+    <Compile Include="Vista\frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmModalGO.cs">
+    <Compile Include="Vista\frmModalGO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmModalGO.Designer.cs">
+    <Compile Include="Vista\frmModalGO.Designer.cs">
       <DependentUpon>frmModalGO.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmRegistoCliente.cs">
+    <Compile Include="Vista\frmRegistoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmRegistoCliente.Designer.cs">
+    <Compile Include="Vista\frmRegistoCliente.Designer.cs">
       <DependentUpon>frmRegistoCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Modal_Add_Cart.cs">
+    <Compile Include="Vista\Modal_Add_Cart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Modal_Add_Cart.Designer.cs">
+    <Compile Include="Vista\Modal_Add_Cart.Designer.cs">
       <DependentUpon>Modal_Add_Cart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Principal.cs">
+    <Compile Include="Vista\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Principal.Designer.cs">
+    <Compile Include="Vista\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="lblAdmin\LabelText.cs" />
     <Compile Include="Modelo\Stock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\UserControls\UC_Graficos.cs">
+    <Compile Include="Vista\UserControls\UC_Graficos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Graficos.Designer.cs">
+    <Compile Include="Vista\UserControls\UC_Graficos.Designer.cs">
       <DependentUpon>UC_Graficos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Inicio.cs">
+    <Compile Include="Vista\UserControls\UC_Inicio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Inicio.Designer.cs">
+    <Compile Include="Vista\UserControls\UC_Inicio.Designer.cs">
       <DependentUpon>UC_Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Clientes.cs">
+    <Compile Include="Vista\UserControls\UC_Clientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Clientes.Designer.cs">
+    <Compile Include="Vista\UserControls\UC_Clientes.Designer.cs">
       <DependentUpon>UC_Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Items.cs">
+    <Compile Include="Vista\UserControls\UC_Items.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Items.Designer.cs">
+    <Compile Include="Vista\UserControls\UC_Items.Designer.cs">
       <DependentUpon>UC_Items.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Perf_Prod.cs">
+    <Compile Include="Vista\UserControls\UC_Perf_Prod.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Perf_Prod.Designer.cs">
+    <Compile Include="Vista\UserControls\UC_Perf_Prod.Designer.cs">
       <DependentUpon>UC_Perf_Prod.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Ventas.cs">
+    <Compile Include="Vista\UserControls\UC_Ventas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UserControls\UC_Ventas.Designer.cs">
+    <Compile Include="Vista\UserControls\UC_Ventas.Designer.cs">
       <DependentUpon>UC_Ventas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Form1.resx">
+    <EmbeddedResource Include="Vista\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAddStock.resx">
+    <EmbeddedResource Include="Vista\frmAddItem.resx">
+      <DependentUpon>frmAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmAddStock.resx">
       <DependentUpon>frmAddStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAgregarItem.resx">
-      <DependentUpon>frmAgregarItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDetVenta.resx">
+    <EmbeddedResource Include="Vista\frmDetVenta.resx">
       <DependentUpon>frmDetVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMarca.resx">
+    <EmbeddedResource Include="Vista\frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmModalGO.resx">
+    <EmbeddedResource Include="Vista\frmModalGO.resx">
       <DependentUpon>frmModalGO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmRegistoCliente.resx">
+    <EmbeddedResource Include="Vista\frmRegistoCliente.resx">
       <DependentUpon>frmRegistoCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Modal_Add_Cart.resx">
+    <EmbeddedResource Include="Vista\Modal_Add_Cart.resx">
       <DependentUpon>Modal_Add_Cart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Principal.resx">
+    <EmbeddedResource Include="Vista\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -196,22 +201,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\UserControls\UC_Graficos.resx">
+    <EmbeddedResource Include="Vista\UserControls\UC_Graficos.resx">
       <DependentUpon>UC_Graficos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserControls\UC_Inicio.resx">
+    <EmbeddedResource Include="Vista\UserControls\UC_Inicio.resx">
       <DependentUpon>UC_Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserControls\UC_Clientes.resx">
+    <EmbeddedResource Include="Vista\UserControls\UC_Clientes.resx">
       <DependentUpon>UC_Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserControls\UC_Items.resx">
+    <EmbeddedResource Include="Vista\UserControls\UC_Items.resx">
       <DependentUpon>UC_Items.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserControls\UC_Perf_Prod.resx">
+    <EmbeddedResource Include="Vista\UserControls\UC_Perf_Prod.resx">
       <DependentUpon>UC_Perf_Prod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserControls\UC_Ventas.resx">
+    <EmbeddedResource Include="Vista\UserControls\UC_Ventas.resx">
       <DependentUpon>UC_Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -230,9 +235,6 @@
     </None>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

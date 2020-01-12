@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Oracle.DataAccess.Client;
+//lib
+using MySql.Data.MySqlClient;
 using System.Configuration;
 using ferreteria_x_2019.Modelo;
-using Oracle.DataAccess.Types;
 using ferreteria_x_2019.Controlador;
 using ferreteria_x_2019.Forms;
 using Bunifu;
@@ -19,25 +19,79 @@ namespace ferreteria_x_2019.UC_Inicio
 {
     public partial class UC_Inicio : UserControl
     {
-        /// Conexion
-        /// 
-        public char KeyChar { get; set; }
-        public event System.Windows.Forms.KeyEventHandler KeyPess;
-        internal static OracleConnection conn = null;
-        
+
         public UC_Inicio()
         {
-            /*TextBox tb = new TextBox();
-            this.Controls.Add(tb);
-            tb.KeyPress += new KeyPressEventHandler(keypressed);
-            */
-            abrirConexion();
-            //disabl_btn();
             InitializeComponent();
+            refresca();
+        }
+        private void refresca()
+        {
+            listarStock();
+            listar();
+            //detalles();
+        }
+        public void listarStock()
+        {
+            try
+            {
+                //s
+                /*Inicio_C obj = new Inicio_C();
+                obj.listarR();
+
+                DataSet dataI = new DataSet();
+                (Inicio_C.getLstR).Fill(dataI);
+                dgvRecep.AllowUserToAddRows = false;
+                dgvRecep.Rows.Clear();
+                for (int i = 0; i < dataI.Tables[0].Rows.Count; i++)
+                {
+                    dgvRecep.Rows.Add(
+                    dataI.Tables[0].Rows[i][0],
+                    dataI.Tables[0].Rows[i][1],
+                    dataI.Tables[0].Rows[i][2],
+                    dataI.Tables[0].Rows[i][3]
+                    );
+
+                }*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al listar Clientes");
+            }
+
+        }
+        public void listar()
+        {
+            try
+            {
+                //s
+                /*Inicio_C obj = new Inicio_C();
+                obj.listarE();
+
+                DataSet dataI = new DataSet();
+                (Inicio_C.getLst).Fill(dataI);
+                dgvEnviados.AllowUserToAddRows = false;
+                dgvEnviados.Rows.Clear();
+                for (int i = 0; i < dataI.Tables[0].Rows.Count; i++)
+                {
+                    dgvEnviados.Rows.Add(
+                    dataI.Tables[0].Rows[i][0],
+                    dataI.Tables[0].Rows[i][1],
+                    dataI.Tables[0].Rows[i][2],
+                    dataI.Tables[0].Rows[i][3]
+                    );
+
+                }*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al listar Enviados");
+            }
+
         }
         public void disabl_btn()
         {
-            OracleCommand cmd3 = new OracleCommand("select count(*) from cesta", conn);
+            /*OracleCommand cmd3 = new OracleCommand("select count(*) from cesta", conn);
             string contr = (cmd3.ExecuteScalar()).ToString();
             OracleCommand cmd4 = new OracleCommand("select count(*) from stock", conn);
             string c_stk = (cmd4.ExecuteScalar()).ToString();
@@ -53,11 +107,11 @@ namespace ferreteria_x_2019.UC_Inicio
             {
                 bunifuImageButton2.Enabled = false;
                 btnGuardarCart.Enabled = false;
-            }
+            }*/
         }
         private void abrirConexion()
         {
-            string conexionstring = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            /*string conexionstring = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             conn = new OracleConnection(conexionstring);
             try
             {
@@ -67,7 +121,7 @@ namespace ferreteria_x_2019.UC_Inicio
             {
                 MessageBox.Show("Error de conexion");
                 throw new Exception("Error !!!");
-            }
+            }*/
         }
         private void UC_Inicio_Load(object sender, EventArgs e)
         {
@@ -89,11 +143,11 @@ namespace ferreteria_x_2019.UC_Inicio
 
             try
             {
-                OracleCommand comando = new OracleCommand();
+                /*OracleCommand comando = new OracleCommand();
                 comando.Connection = conn;
                 comando.CommandText = "select count(*) from clientes";
                 //guardamos el resultado en el TextBox txt_num_ventas
-                lblClientes.Text = (comando.ExecuteScalar()).ToString();
+                lblClientes.Text = (comando.ExecuteScalar()).ToString();*/
 
             }
             catch (Exception ex)
@@ -107,11 +161,11 @@ namespace ferreteria_x_2019.UC_Inicio
             
             try
             {
-                OracleCommand comando = new OracleCommand();
+                /*OracleCommand comando = new OracleCommand();
                 comando.Connection = conn;
                 comando.CommandText = "select sum(total) from ventas";
                 //guardamos el resultado en el TextBox txt_num_ventas
-                lblVentasHoy.Text = (comando.ExecuteScalar()).ToString() + " Bs.";
+                lblVentasHoy.Text = (comando.ExecuteScalar()).ToString() + " Bs.";*/
 
             }
             catch (Exception ex)
@@ -125,12 +179,12 @@ namespace ferreteria_x_2019.UC_Inicio
             //String sql = string.Format("select SUM(precio*cantidad) from cesta c, items i where c.item_id = i.item_id");
             try
             {
-                OracleCommand comando = new OracleCommand();
+                /*OracleCommand comando = new OracleCommand();
                 comando.Connection = conn;
                 comando.CommandText = "select SUM(precio*cantidad) from cesta c, items i where c.item_id = i.item_id";
                 //guardamos el resultado en el TextBox txt_num_ventas
                 lblTotalCesta.Text = (comando.ExecuteScalar()).ToString() + " Bs.";
-                lblOredenes.Text = (comando.ExecuteScalar()).ToString()+" Bs.";
+                lblOredenes.Text = (comando.ExecuteScalar()).ToString()+" Bs.";*/
                 
             }
             catch (Exception ex)
@@ -148,7 +202,7 @@ namespace ferreteria_x_2019.UC_Inicio
             try
             {
 
-                if (conn.State == System.Data.ConnectionState.Open)
+                /*if (conn.State == System.Data.ConnectionState.Open)
                 {
                     OracleCommand cmd1 = new OracleCommand();
                     cmd1.Connection = conn;
@@ -168,7 +222,7 @@ namespace ferreteria_x_2019.UC_Inicio
                             ds1.Tables[0].Rows[i][2],
                             ds1.Tables[0].Rows[i][3]
                         );
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -186,7 +240,7 @@ namespace ferreteria_x_2019.UC_Inicio
             try
             {
 
-                if (conn.State == System.Data.ConnectionState.Open)
+                /*if (conn.State == System.Data.ConnectionState.Open)
                 {
                     OracleCommand cmd1 = new OracleCommand();
                     cmd1.Connection = conn;
@@ -205,7 +259,7 @@ namespace ferreteria_x_2019.UC_Inicio
                             ds1.Tables[0].Rows[i][2],
                             ds1.Tables[0].Rows[i][3]
                         );
-                }
+                }*/
                 
                 
             }
@@ -225,19 +279,19 @@ namespace ferreteria_x_2019.UC_Inicio
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            String ide = dgvStock.CurrentRow.Cells[0].Value.ToString();
+            /*String ide = dgvStock.CurrentRow.Cells[0].Value.ToString();
             CI_Cesta.NomItem = dgvStock.CurrentRow.Cells[1].Value.ToString();
             int id = Convert.ToInt32(ide);
             CI_Cesta.Id = id;
             
             Modal_Add_Cart a = new Modal_Add_Cart();
             a.ShowDialog();
-            refrescar();
+            refrescar();*/
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-            String ID_C = dgvCart.CurrentRow.Cells[0].Value.ToString();
+            /*String ID_C = dgvCart.CurrentRow.Cells[0].Value.ToString();
             int ide = Convert.ToInt32(ID_C);
             abrirConexion();
             OracleCommand objCmd = new OracleCommand();
@@ -250,9 +304,9 @@ namespace ferreteria_x_2019.UC_Inicio
             try
             {
                 objCmd.ExecuteNonQuery();
-                /*Principal m = new Principal();
-                m.ShowDialog();
-                this.Hide();*/
+                //Principal m = new Principal();
+                //m.ShowDialog();
+                //this.Hide();
                 //MessageBox.Show(ide);
                 //System.Console.WriteLine("Number of employees in department 20 is {0}", objCmd.Parameters["pout_count"].Value);
             }
@@ -260,7 +314,7 @@ namespace ferreteria_x_2019.UC_Inicio
             {
                 MessageBox.Show("Error al al procesar quitar datos de cart");
             }
-            refrescar();
+            refrescar();*/
         }
 
         private void btnAgregarItems_Click(object sender, EventArgs e)
@@ -271,12 +325,12 @@ namespace ferreteria_x_2019.UC_Inicio
         }
         public void regisventa()
         {
-            string id_cli,id_user;
-            string usuario = CI_Ventas.Usuar;
+            /*string id_cli,id_user;
+            string usuario = CI_Venta.Usuar;
             int tienda = 1;
             OracleCommand cmdu = new OracleCommand("select usuario_id from usuarios where usuario = '"+usuario+"'", conn);
             id_user = (cmdu.ExecuteScalar()).ToString();
-            id_cli = CI_Clientes.Id_cli;
+            id_cli = CI_Cliente.Id_cli;
 
             try
             {
@@ -295,12 +349,12 @@ namespace ferreteria_x_2019.UC_Inicio
             {
                 MessageBox.Show("Ocurrio error al registrar ventas");
             }
-            
+            */
         }
 
         public void registrodetVenta()
         {
-            //abrirConexion();
+           /* //abrirConexion();
             refrescar();
             try
             {
@@ -325,6 +379,7 @@ namespace ferreteria_x_2019.UC_Inicio
                 MessageBox.Show("Ocurrio un error");
             }
             refrescar();
+            */
         }
 
         private void UC_Inicio_Click(object sender, EventArgs e)
@@ -359,6 +414,7 @@ namespace ferreteria_x_2019.UC_Inicio
         }
         private void datosBuscados()
         {
+            /*
             List<CI_Stock> Lista = new List<CI_Stock>();
             using (OracleCommand command = new OracleCommand())
             {
@@ -385,6 +441,7 @@ namespace ferreteria_x_2019.UC_Inicio
             //MessageBox.Show(Lista.OrderBy(b => b.Id_Item).ToList()+"");
             dgvStock.Rows.Clear();
             dgvStock.DataSource = Lista.OrderBy(b => b.Id_Item).ToList();
+            */
         }
         /*private void keypressed(Object o, KeyPressEventArgs e)
 {

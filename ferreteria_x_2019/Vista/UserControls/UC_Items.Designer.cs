@@ -39,14 +39,13 @@
             this.lblMarcas = new System.Windows.Forms.Label();
             this.btnAgregarItems = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dgvItems = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.btnModificar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.Eliminar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnModificar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Eliminar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -161,7 +160,6 @@
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
             this.Column4,
             this.Column5,
             this.Column6});
@@ -185,36 +183,6 @@
             this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItems.Size = new System.Drawing.Size(678, 465);
             this.dgvItems.TabIndex = 72;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Artículo";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Cod";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tipo";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Marca";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Precio U.";
-            this.Column6.Name = "Column6";
             // 
             // btnModificar
             // 
@@ -294,6 +262,31 @@
             this.Eliminar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Artículo";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tipo";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Marca";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Precio U.";
+            this.Column6.Name = "Column6";
+            // 
             // UC_Items
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -323,13 +316,12 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvItems;
         private Bunifu.Framework.UI.BunifuFlatButton btnModificar;
         private Bunifu.Framework.UI.BunifuFlatButton Eliminar;
+        private System.Windows.Forms.Label lblMarcas;
+        private System.Windows.Forms.Label lblTipos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Label lblMarcas;
-        private System.Windows.Forms.Label lblTipos;
     }
 }

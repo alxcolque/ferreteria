@@ -46,7 +46,7 @@ namespace ferreteria_x_2019.Forms
             comboBoxCliente.DisplayMember = "nombre";
             comboBoxCliente.ValueMember = "cliente_id";
             txtID_Clie.Text = comboBoxCliente.SelectedValue.ToString();
-            CI_Clientes.Id_cli = txtID_Clie.Text;
+            CI_Cliente.Id_cli = txtID_Clie.Text;
         }
         private void btnGuardarC_Click(object sender, EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace ferreteria_x_2019.Forms
                     //MessageBox.Show(txtID_Clie.Text);
 
                 }
-                CI_Clientes.Id_cli = txtID_Clie.Text;
+                CI_Cliente.Id_cli = txtID_Clie.Text;
                 //MessageBox.Show(clie);
             }
             catch (Exception ex)
@@ -85,7 +85,7 @@ namespace ferreteria_x_2019.Forms
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
-            CI_Clientes.Id_cli = "0";
+            CI_Cliente.Id_cli = "0";
             try
             {
                 frmRegistoCliente ar = new frmRegistoCliente();

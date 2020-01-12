@@ -81,7 +81,7 @@ namespace ferreteria_x_2019.UC_Inicio
         private void btnDV_Click(object sender, EventArgs e)
         {
             String ide = dgvVentas.CurrentRow.Cells[0].Value.ToString();
-            CI_Ventas.Id_V = ide;
+            CI_Venta.Id_V = ide;
             using (frmDetVenta uf = new frmDetVenta())
             {
                 uf.ShowDialog();

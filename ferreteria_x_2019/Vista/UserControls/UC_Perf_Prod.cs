@@ -112,14 +112,14 @@ namespace ferreteria_x_2019.UC_Inicio
         {
             abrirConexion();
             String ide = dgvStock.CurrentRow.Cells[0].Value.ToString();//select nombre from items where item_id=1;
-            CI_Items.Id_It = ide;
+            CI_Item.Id_It = ide;
             OracleCommand cmdu = new OracleCommand("select nombre from items where item_id='" + int.Parse(ide) + "'", conn);
             string nomb = (cmdu.ExecuteScalar()).ToString();
             if (MessageBox.Show("¿Va a eliminar " + nomb + "?", "¡Advertencia!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
                 {
-                    string a = CI_Items.Id_It;
+                    string a = CI_Item.Id_It;
                     OracleCommand cmd2 = new OracleCommand("DELETE stock WHERE item_id = '" + int.Parse(a) + "'", conn);
                     cmd2.ExecuteNonQuery();
                     //MessageBox.Show("Yes "+a);

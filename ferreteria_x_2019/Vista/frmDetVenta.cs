@@ -42,12 +42,12 @@ namespace ferreteria_x_2019.Forms
         {
             llenart();
             abrirConexion();
-            lblID_Venta.Text = CI_Ventas.Id_V;
-            OracleCommand cmd1 = new OracleCommand("(select c.nombre from ventas v, clientes c where v.cliente_id = c.cliente_id and venta_id ='" + CI_Ventas.Id_V + "')", conn);
+            lblID_Venta.Text = CI_Venta.Id_V;
+            OracleCommand cmd1 = new OracleCommand("(select c.nombre from ventas v, clientes c where v.cliente_id = c.cliente_id and venta_id ='" + CI_Venta.Id_V + "')", conn);
             lblNombreCli.Text = (cmd1.ExecuteScalar()).ToString();
-            OracleCommand cmd2 = new OracleCommand("(select sum(cantidad*precio) from det_ventas d, items i where d.item_id = i.item_id and venta_id='" + CI_Ventas.Id_V + "')", conn);
+            OracleCommand cmd2 = new OracleCommand("(select sum(cantidad*precio) from det_ventas d, items i where d.item_id = i.item_id and venta_id='" + CI_Venta.Id_V + "')", conn);
             lblMontoTotal.Text = (cmd2.ExecuteScalar()).ToString();//select fecha_venta from ventas where venta_id = 20;
-            OracleCommand cmd3 = new OracleCommand("(select fecha_venta from ventas where venta_id = '" + CI_Ventas.Id_V + "')", conn);
+            OracleCommand cmd3 = new OracleCommand("(select fecha_venta from ventas where venta_id = '" + CI_Venta.Id_V + "')", conn);
             lblFecha.Text = (cmd3.ExecuteScalar()).ToString();
             conn.Close();
         }
@@ -66,7 +66,7 @@ namespace ferreteria_x_2019.Forms
                     cmd.Connection = conn;
                     cmd.CommandText = "list_det_ventas";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("id", OracleDbType.Int32).Value = CI_Ventas.Id_V;
+                    cmd.Parameters.Add("id", OracleDbType.Int32).Value = CI_Venta.Id_V;
                     cmd.Parameters.Add("resul", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
                     //MessageBox.Show(CI_Ventas.Id_V);
                     //objCmd.Parameters.Add("precio", OracleDbType.Double).Value = double.Parse(txtPrecio.Text);

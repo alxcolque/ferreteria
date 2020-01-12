@@ -77,7 +77,7 @@ namespace ferreteria_x_2019.UC_Inicio
         {
             try
             {
-                CI_Clientes.Id_cli = "0";
+                CI_Cliente.Id_cli = "0";
                 using (frmRegistoCliente t = new frmRegistoCliente())
                 {
                     t.ShowDialog();
@@ -95,9 +95,9 @@ namespace ferreteria_x_2019.UC_Inicio
         {
             try
             {
-                CI_Clientes.Id_cli = dgvClientes.CurrentRow.Cells[0].Value.ToString();
-                CI_Clientes.NomC = dgvClientes.CurrentRow.Cells[1].Value.ToString();
-                CI_Clientes.TelC = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                CI_Cliente.Id_cli = dgvClientes.CurrentRow.Cells[0].Value.ToString();
+                CI_Cliente.NomC = dgvClientes.CurrentRow.Cells[1].Value.ToString();
+                CI_Cliente.TelC = dgvClientes.CurrentRow.Cells[2].Value.ToString();
                 //MessageBox.Show(ide+nom+ic+tipo+marca+prec);
                 using (frmRegistoCliente r = new frmRegistoCliente())
                 {

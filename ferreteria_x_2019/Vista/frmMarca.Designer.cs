@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMarca));
-            this.dgvMa = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dgvM = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.dgvTi = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtMarca = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.lblMarcas = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.txtTipo = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNewM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUptM)).BeginInit();
@@ -59,14 +59,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvMa
+            // dgvM
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvMa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMa.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dgvMa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.dgvMa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvM.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvM.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dgvM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.dgvM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvM.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,19 +74,20 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMa.DoubleBuffered = true;
-            this.dgvMa.EnableHeadersVisualStyles = false;
-            this.dgvMa.GridColor = System.Drawing.Color.Teal;
-            this.dgvMa.HeaderBgColor = System.Drawing.Color.DarkCyan;
-            this.dgvMa.HeaderForeColor = System.Drawing.Color.Honeydew;
-            this.dgvMa.Location = new System.Drawing.Point(40, 224);
-            this.dgvMa.Name = "dgvMa";
-            this.dgvMa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvMa.Size = new System.Drawing.Size(261, 214);
-            this.dgvMa.TabIndex = 8;
-            this.dgvMa.SelectionChanged += new System.EventHandler(this.dgvMa_SelectionChanged);
+            this.dgvM.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvM.DoubleBuffered = true;
+            this.dgvM.EnableHeadersVisualStyles = false;
+            this.dgvM.GridColor = System.Drawing.Color.Teal;
+            this.dgvM.HeaderBgColor = System.Drawing.Color.DarkCyan;
+            this.dgvM.HeaderForeColor = System.Drawing.Color.Honeydew;
+            this.dgvM.Location = new System.Drawing.Point(40, 224);
+            this.dgvM.Name = "dgvM";
+            this.dgvM.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvM.Size = new System.Drawing.Size(261, 214);
+            this.dgvM.TabIndex = 8;
+            this.dgvM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMa_CellContentClick);
+            this.dgvM.SelectionChanged += new System.EventHandler(this.dgvMa_SelectionChanged);
             // 
             // dgvTi
             // 
@@ -311,14 +312,14 @@
             this.Controls.Add(this.lblMarcas);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.dgvTi);
-            this.Controls.Add(this.dgvMa);
+            this.Controls.Add(this.dgvM);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMarca";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNewM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUptM)).EndInit();
@@ -334,7 +335,7 @@
 
         #endregion
 
-        public Bunifu.Framework.UI.BunifuCustomDataGrid dgvMa;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid dgvM;
         public Bunifu.Framework.UI.BunifuCustomDataGrid dgvTi;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtMarca;
         private System.Windows.Forms.Label lblMarcas;
